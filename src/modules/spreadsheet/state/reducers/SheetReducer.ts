@@ -1,4 +1,5 @@
 import {
+    CREATE_SHEET_SUCCESS,
     GET_SHEET_SUCCESS,
 } from "../types/SheetTypes";
 
@@ -11,6 +12,12 @@ const sheetReducer = (state = initialState, action: any) => {
     switch (action.type) {
 
         case GET_SHEET_SUCCESS:
+            return {
+                ...state,
+                sheet: action.payload.sheet,
+            };
+
+        case CREATE_SHEET_SUCCESS:
             return {
                 ...state,
                 sheet: action.payload.sheet,

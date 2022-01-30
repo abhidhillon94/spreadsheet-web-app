@@ -1,0 +1,13 @@
+.sheet, .sheet td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+
+.sheet td {
+    padding: 3px;
+    min-width: 50px;
+}
+
+.sheet input {
+    border: none;
+}

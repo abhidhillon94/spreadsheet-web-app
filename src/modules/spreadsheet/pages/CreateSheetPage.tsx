@@ -1,19 +1,32 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 import { RootState } from '../../../state/RootReducer';
-import { getSheet } from '../state/actions/SheetActions';
+import { createSheet, getSheet } from '../state/actions/SheetActions';
+
+import css from '../css/CreateSheetPage.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const CreateSheetPage = (props: any) => {
 
     const dispatch = useDispatch();
-    const sheet = useSelector((state: RootState) => state?.sheet)
+    const sheet = useSelector((state: RootState) => state?.spreadsheet?.sheet)
+    const navigate = useNavigate();
 
     useEffect(() => {
-        dispatch(getSheet('asd'));
-    }, []);
+        console.log({sheet});
+        if (sheet) {
+            navigate(`/${sheet._id}`)
+        }
+    }, [sheet]);
+
+    const onClickCreateSheet = () => {
+        dispatch(createSheet({}));
+    }
 
     return (
-        <div>test {sheet.sheet?.result}</div>
+        <div className={css.wrapper} >
+            <button onClick={onClickCreateSheet} >Create New Sheet</button>
+        </div>
     );
 }
 
