@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent } from 'react';
 
 interface IProps {
     value: string;
@@ -12,7 +12,7 @@ const Cell = (props: IProps) => {
             <input
                 data-identifier={props.identifier}
                 onChange={props.onEditCell}
-                value={props.value}
+                value={props.value || ''}
             />
         </td>
     );

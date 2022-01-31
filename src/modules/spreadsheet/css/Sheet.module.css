@@ -10,4 +10,13 @@
 
 .sheet input {
     border: none;
+    outline: none;
+}
+
+.sheet thead, .sheet thead input {
+    background:#e1e3e6;
+}
+
+.colInput {
+    background-color: white !important;
 }

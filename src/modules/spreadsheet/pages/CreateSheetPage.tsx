@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector, useStore } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../state/RootReducer';
-import { createSheet, getSheet } from '../state/actions/SheetActions';
+import { createSheet } from '../state/actions/SheetActions';
 
 import css from '../css/CreateSheetPage.module.css';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +13,6 @@ const CreateSheetPage = (props: any) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        console.log({sheet});
         if (sheet) {
             navigate(`/${sheet._id}`)
         }
